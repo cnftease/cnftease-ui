@@ -1,0 +1,54 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+variables:
+- name: outputFolder
+  value: dist/cnftease
+- name: majorVersion
+  value: "1"
+- name: minorVersion
+  value: "1"
+- name: patchVersion
+  value: $[counter(format('{0}.{1}', variables['majorVersion'], variables['minorVersion']), 1)]
+
+name: 'Set in task below'
+trigger:
+  batch: "true"
+  paths:
+    exclude:
+      - azure-pipelines.yml
+      - .git
+      - .gitignore
+    include:
+      - "*"
+pool:
+  vmImage: 'ubuntu-latest'
+stages:
+- stage: BuildStage
+  displayName: 'Build Stage'
+  jobs:
+  - job: Test
+    steps:
+    - task: NodeTool@0 
+      inputs:
+        versionSpec: '12.x'
+    - script: |
+          npm install
+          npm run test
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/*-test-result.xml'
+        failTaskOnFailedTests: true
+    - task: Npm@1
+      displayName: 'Project Build Prod'
+      inputs:
+        command: 'custom'
+        customCommand: 'run build:prod'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)/$(outputFolder)'
+        ArtifactName: '$(Build.DefinitionName)'
+        publishLocation: 'Container'
