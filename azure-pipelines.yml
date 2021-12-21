@@ -34,9 +34,15 @@ stages:
     - task: NodeTool@0 
       inputs:
         versionSpec: '12.x'
-    - script: |
-          npm install
-          npm run test
+    - task: Npm@1
+      displayName: 'Npm Install'
+      inputs:
+        command: 'install'
+    - task: Npm@1
+      displayName: 'Run Tests'
+      inputs:
+        command: 'custom'
+        customCommand: 'run test'
     - task: PublishTestResults@2
       inputs:
         testResultsFormat: 'JUnit'
@@ -46,7 +52,7 @@ stages:
       displayName: 'Project Build Prod'
       inputs:
         command: 'custom'
-        customCommand: 'run build:prod'
+        customCommand: 'run build'
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.SourcesDirectory)/$(outputFolder)'
