@@ -1,0 +1,50 @@
+section {
+    padding: 5em 0;
+    display: flex;
+}
+section:last-child{
+    flex: 1 0 content;
+}
+.section-title {
+    font-size: 2em;
+}
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 50em;
+}
+.container>h3,.container>p,.container>ol>li{
+    font-size: x-large;
+    line-height: 1.5em;
+}
+.container>h3{
+    font-weight: bold;
+}
+.completed {
+    text-decoration: line-through;
+}
+.problems {
+    background-color: var(--wp-solutions-bg,#22EC8E);
+    color: rgba(black, 0.87);
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.mat-icon {
+    height: 1em;
+    width: 1em;
+    font-size: 150px;
+}
+.logo {
+    text-align: center;
+}
+.logo-img {
+    max-height: 250px;
+    transition: 1000ms;
+}
+.logo-img:hover {
+    max-height: 300px;
+    transition: 1000ms;
+}

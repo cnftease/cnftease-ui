@@ -1,0 +1,148 @@
+# this is an auto generated file. This will be overwritten
+query GetProject($id: ID!) {
+  getProject(id: $id) {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListProjects(
+  $filter: ModelProjectFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectSeries($id: ID!) {
+  getProjectSeries(id: $id) {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectSeries(
+  $filter: ModelProjectSeriesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectSeries(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProjectSeriesEvent($id: ID!) {
+  getProjectSeriesEvent(id: $id) {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}
+query ListProjectSeriesEvents(
+  $filter: ModelProjectSeriesEventFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectSeriesEvents(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      projectSeriesID
+      projectSeries {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      type
+      description
+      date
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

@@ -1,0 +1,40 @@
+<section class="statement">
+    <div class="container">
+        <h2 class="section-title">Goals and growth.</h2>
+        <mat-icon class="section-icon">bar_chart</mat-icon>
+        <p>We are attempting to organically allocate seed funds through various mechanisms.</p>
+        <p>Several avenues are in the works those details will be released as soon as they are finalized.</p>
+        <p>Our goal is to raise money while doing active development and growing our community. This will allow for us to have the funding to grow our team and offer more to our community.</p>
+    </div>
+</section>
+<section class="funds">
+    <div class="container">
+        <h2 class="section-title">Powered by the people.</h2>
+        <mat-icon class="section-icon">group_on</mat-icon>
+        <p>One goal of ours is to bring the community closer together.</p>        
+        <p>More details will come but look forward to being able to stake with us as an easy way to support the team.</p>
+        <p>We are in the works of creating our own stake pool and strategizing on how to incentivize our community through unique rewards and more.</p>
+    </div>
+</section>
+<section class="donations">
+    <div class="container">
+        <h2 class="section-title">Everything helps.</h2>
+        <mat-icon class="section-icon">thumb_up_alt</mat-icon>
+        <p>As a way to openly give your support, we are accepting donations in ADA.</p>
+        <p>Any donation made can be sent to the address below. Donations sent will be used to fund operational costs, growth and community events.</p>
+    </div>
+</section>
+<section class="funds">
+    <div class="container">
+        <h2 class="section-title">Thank you!</h2>
+        <mat-icon class="section-icon">mood</mat-icon>
+        <p>Please use the address below if you would like to send us a donation!</p>
+        <mat-card class="accent">
+            <mat-card-content class="row">
+                <p class="address">{{walletAddress}}</p>
+                <button (click)="openSnackBar('Copied!')" [cdkCopyToClipboard]="walletAddress" mat-raised-button class="inline"><mat-icon>content_copy</mat-icon></button>
+            </mat-card-content>
+        </mat-card>
+        <p>Stay tuned for details and thank you for visiting!</p>
+    </div>
+</section>

@@ -1,0 +1,50 @@
+section {
+    padding: 5em 0;
+    display: flex;
+}
+.row {
+    flex-direction: row;
+    flex: 1 0 content;
+    display:flex;
+    gap: 1em;
+}
+section:last-child{
+    flex: 1 0 content;
+}
+.section-title {
+    font-size: 2em;
+}
+.container {
+    width: 85%;
+    margin: 0 auto;
+    max-width: 800px;
+}
+.container>h3,.container>p,.container>ol>li{
+    font-size: x-large;
+    line-height: 1.5em;
+}
+.container>h3{
+    font-weight: bold;
+}
+.funds {
+    background-color: var(--wp-solutions-bg,#22EC8E);
+    color: rgba(black, 0.87);
+}
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.section-icon {
+    height: 10rem;
+    width: 10rem;
+    font-size: 10rem;
+    overflow-x: hidden;
+}
+.address {
+    overflow-x: scroll;
+}
+
+::ng-deep .copied{
+    text-align: center !important;
+ }

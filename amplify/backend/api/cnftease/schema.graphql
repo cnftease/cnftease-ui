@@ -1,0 +1,28 @@
+type Project @model {
+  id: ID!
+  name: String!
+  series: [ProjectSeries] @connection(keyName: "byProject", fields: ["id"])
+}
+
+type ProjectSeries @model @key(name: "byProject", fields: ["projectID"]) {
+  id: ID!
+  title: String!
+  projectID: ID!
+  project: Project @connection(fields: ["projectID"])
+  events: [ProjectSeriesEvent] @connection(keyName: "byProjectSeries", fields: ["id"])
+}
+
+enum ProjectSeriesEventType {
+  MINT
+  AMA
+  UPDATE
+}
+
+type ProjectSeriesEvent @model @key(name: "byProjectSeries", fields: ["projectSeriesID"]) {
+  id: ID!
+  projectSeriesID: ID!
+  projectSeries: ProjectSeries @connection(fields: ["projectSeriesID"])
+  type: ProjectSeriesEventType!
+  description: String!
+  date: String!
+}

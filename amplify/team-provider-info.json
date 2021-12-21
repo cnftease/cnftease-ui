@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cnftease-dev-195352-authRole",
+      "UnauthRoleArn": "arn:aws:iam::673021525887:role/amplify-cnftease-dev-195352-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::673021525887:role/amplify-cnftease-dev-195352-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-cnftease-dev-195352-deployment",
+      "UnauthRoleName": "amplify-cnftease-dev-195352-unauthRole",
+      "StackName": "amplify-cnftease-dev-195352",
+      "StackId": "arn:aws:cloudformation:us-east-1:673021525887:stack/amplify-cnftease-dev-195352/3a4b13e0-4292-11ec-8ef8-0a726cf22453",
+      "AmplifyAppId": "d148j2oy20hyyq"
+    },
+    "categories": {
+      "auth": {
+        "cnfteasede05ccbf": {}
+      }
+    }
+  }
+}

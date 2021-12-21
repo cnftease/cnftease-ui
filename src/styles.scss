@@ -1,0 +1,65 @@
+/* SASS */
+html, body {
+  height: 100%;
+}
+body{
+    min-height: 100%;
+    font-family: 'lato', sans-serif;
+    margin: 0;
+}
+
+.light-theme {
+  background-color: #f5f5f5;
+}
+.dark-theme {
+  background-color: #222;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgray; 
+}
+
+@mixin md-icon-size($size: 24px) {
+  font-size: $size;
+  height: $size;
+  width: $size;
+  line-height: $size;
+}
+
+/* Layout */
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+
+.soon {
+  font-style: italic;
+}
+
+.mat-snack-bar-container{
+  background: #424242 !important;
+  color: white !important;
+}
+.mat-simple-snackbar {
+  justify-content: center !important;
+  
+}

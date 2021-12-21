@@ -1,0 +1,43 @@
+<header id="header">
+    <mat-toolbar color="primary">
+        <h2 class="retro">CNFTEASE.com</h2>
+        <span></span>
+        <button mat-icon-button matTooltip="Whitepaper" [routerLink]="['/whitepaper']">
+            <mat-icon>description</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Discord" (click)="onDiscordClick()">
+            <mat-icon>discord</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Funding" [routerLink]="['/funding']">
+            <mat-icon>attach_money</mat-icon>
+        </button>
+        <button mat-icon-button matTooltip="Menu">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Main menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <span mat-menu-item *ngIf="isSignedIn()" disabled="true">Hello, {{getUsername()}}</span>
+                <button mat-menu-item *ngIf="isSignedIn()" [routerLink]="['/profile']">
+                    <mat-icon>account_circle</mat-icon>Profile
+                </button>
+                <span mat-menu-item>
+                    <mat-icon>bedtime</mat-icon>
+                    <mat-slide-toggle [formControl]="toggleControl"></mat-slide-toggle>
+                </span>
+                <!-- <button mat-menu-item *ngIf="isSignedIn()" [routerLink]="['/messages']">
+                    <mat-icon>message</mat-icon>Messages
+                </button> -->
+                <button mat-menu-item *ngIf="isSignedIn()" [routerLink]="['/settings']">
+                    <mat-icon>settings</mat-icon>Settings
+                </button>
+                <!-- <button mat-menu-item *ngIf="!isSignedIn()" [routerLink]="['/signin']">
+                    <mat-icon>login</mat-icon>Login
+                </button> -->
+                <button mat-menu-item *ngIf="isSignedIn()" (click)="onSignOut()">
+                    <mat-icon>logout</mat-icon>
+                    <span>Logout</span>>
+                </button>
+            </mat-menu>
+        </button>
+    </mat-toolbar>
+</header>

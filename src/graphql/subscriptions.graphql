@@ -1,0 +1,226 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateProject {
+  onCreateProject {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProject {
+  onUpdateProject {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProject {
+  onDeleteProject {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProjectSeries {
+  onCreateProjectSeries {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectSeries {
+  onUpdateProjectSeries {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectSeries {
+  onDeleteProjectSeries {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProjectSeriesEvent {
+  onCreateProjectSeriesEvent {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProjectSeriesEvent {
+  onUpdateProjectSeriesEvent {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProjectSeriesEvent {
+  onDeleteProjectSeriesEvent {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}

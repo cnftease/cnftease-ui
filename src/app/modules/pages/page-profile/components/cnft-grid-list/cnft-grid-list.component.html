@@ -1,0 +1,5 @@
+<mat-grid-list *ngIf="assets.length > 0" [cols]="columns" rowHeight='1:1'>
+    <mat-grid-tile *ngFor="let asset of assets">
+        <!-- <app-cnft-asset-thumbnail class="nft" [asset]="asset"></app-cnft-asset-thumbnail> -->
+    </mat-grid-tile>
+</mat-grid-list>

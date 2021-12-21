@@ -1,0 +1,109 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$sky-blue-palette: (
+ 50: #def5fb,
+ 100: #abe5f5,
+ 200: #71d4f0,
+ 300: #20c3ec,
+ 400: #00b6ec,
+ 500: #00aaeb,
+ 600: #009cdd,
+ 700: #0089cb,
+ 800: #0078b8,
+ 900: #005899,
+ contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+ )
+);
+
+$sky-blue-palette-dark: (
+ 50: #def5fb,
+ 100: #abe5f5,
+ 200: #71d4f0,
+ 300: #20c3ec,
+ 400: #00b6ec,
+ 500: #00aaeb,
+ 600: #009cdd,
+ 700: #0089cb,
+ 800: #0078b8,
+ 900: #005899,
+ contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+ )
+);
+
+$my-primary: mat.define-palette($sky-blue-palette, 300);
+$my-primary-dark: mat.define-palette($sky-blue-palette-dark, 300);
+
+$green-palette: (
+    50: #e2fcec,
+    100: #b8f7d0,
+    200: #83f2b1,
+    300: #22ec8e,
+    400: #00e571,
+    500: #00dc5a,
+    600: #00cb4f,
+    700: #00b741,
+    800: #00a536,
+    900: #008420,
+    A100: #6fffbf,
+    A200: #00b860,
+    contrast: (
+      50: rgba(black, 0.87),
+      100: rgba(black, 0.87),
+      200: rgba(black, 0.87),
+      300: rgba(black, 0.87),
+      400: white,
+      500: white,
+      600: white,
+      700: white,
+      800: white,
+      900: white,
+    )
+);
+
+$my-accent: mat.define-palette($green-palette, 300, A100, A200);
+
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-light-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn,
+ )
+));
+
+$my-dark-theme: mat.define-dark-theme((
+ color: (
+   primary: $my-primary-dark,
+   accent: $my-accent,
+   warn: $my-warn,
+ )
+));
+
+@include mat.all-component-themes($my-light-theme);
+
+.dark-theme {
+  @include mat.all-component-themes($my-dark-theme);
+}

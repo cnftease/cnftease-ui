@@ -1,0 +1,50 @@
+<div [ngClass]="{
+    'flex-row':cols === 5,
+    'flex-col':cols < 5
+}" class="stage" id="stage">
+    <section class="left-nav" [ngClass]="{
+        'mw-300':cols === 5,
+        '':cols < 5
+    }">
+        <form #accountInfoForm="ngForm" class="search">
+            <mat-form-field appearance="fill" class="flex-grow">
+                <mat-label>
+                    <mat-icon [inline]="true">search</mat-icon>
+                </mat-label>
+                <input type="text" matInput [formControl]="searchControl" placeholder="Search">
+            </mat-form-field>
+        </form>
+        <wallet-selection-list></wallet-selection-list>
+    </section>
+    <section class="profile">
+        <mat-card *ngIf="filteredAssets.length > 0">
+            <mat-card-content>
+                <app-cnft-grid-list [columns]="cols" [assets]="filteredAssets">
+                </app-cnft-grid-list>
+            </mat-card-content>
+            <mat-card-footer></mat-card-footer>
+        </mat-card>
+    </section>
+    <section *ngIf="enableWidgets" class="widgets">
+        <mat-card class="widget">
+            <mat-card-header>
+                <mat-card-title>Upcoming Events</mat-card-title>
+            </mat-card-header>
+            <span class="soon">Coming soon!</span>
+        </mat-card>
+        <mat-card class="widget">
+            <mat-card-header>
+                <mat-card-title>Trending Projects</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <span class="soon">Coming soon!</span>
+            </mat-card-content>
+        </mat-card>
+        <mat-card class="widget">
+            <mat-card-header>
+                <mat-card-title>People to Follow</mat-card-title>
+            </mat-card-header>
+            <span class="soon">Coming soon!</span>
+        </mat-card>
+    </section>
+</div>

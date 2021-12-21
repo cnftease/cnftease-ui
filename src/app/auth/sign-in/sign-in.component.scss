@@ -1,0 +1,21 @@
+.container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: -96px;
+}
+
+.login {
+    flex: 0 1 auto;
+    width: 450px;
+}
+
+form {
+    flex-direction: column;
+    display: flex;
+}
+
+mat-form-field {
+    margin-bottom: 1em;
+}

@@ -1,0 +1,36 @@
+/* Extra small devices (phones, 600px and down) */
+
+.stage {
+    display: flex;
+    gap: 1em;
+    width: 85vw;
+    margin: 0 auto;
+    padding: 1em;
+}
+.widgets {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    flex: 1 0 auto;
+}
+::ng-deep .mat-form-field-wrapper{
+    margin-bottom: -1.25em;
+ }
+.search {
+    display: flex;
+}
+.left-nav {
+    flex: 1 0 auto;
+}
+.mw-300 {
+    max-width: 300px;
+}
+.profile {
+    flex: 5 0 auto;
+}
+.flex-grow {
+    flex: 1 1 auto;
+}
+.inline {
+    display: inline;
+}

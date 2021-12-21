@@ -1,0 +1,34 @@
+<mat-card-header>
+    <mat-card-title>
+        Account Information
+    </mat-card-title>
+</mat-card-header>
+<mat-card-content>
+    <form (submit)="onUpdate(accountInfoForm)" #accountInfoForm="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input type="text" matInput [formControl]="usernameControl" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="text" matInput [formControl]="emailControl" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Phone</mat-label>
+            <input type="text" matInput [formControl]="phoneControl" [readonly]="true">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Twitter</mat-label>
+            <input type="text" matInput [formControl]="twitterControl">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Discord</mat-label>
+            <input type="text" matInput [formControl]="discordControl">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Bio</mat-label>
+            <textarea matInput rows="5" [formControl]="bioControl" placeholder="I like turtles..." ></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Update</button>    
+    </form>
+</mat-card-content>

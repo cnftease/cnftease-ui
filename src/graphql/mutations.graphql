@@ -1,0 +1,253 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateProject(
+  $input: CreateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  createProject(input: $input, condition: $condition) {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProject(
+  $input: UpdateProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  updateProject(input: $input, condition: $condition) {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProject(
+  $input: DeleteProjectInput!
+  $condition: ModelProjectConditionInput
+) {
+  deleteProject(input: $input, condition: $condition) {
+    id
+    name
+    series {
+      items {
+        id
+        title
+        projectID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectSeries(
+  $input: CreateProjectSeriesInput!
+  $condition: ModelProjectSeriesConditionInput
+) {
+  createProjectSeries(input: $input, condition: $condition) {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectSeries(
+  $input: UpdateProjectSeriesInput!
+  $condition: ModelProjectSeriesConditionInput
+) {
+  updateProjectSeries(input: $input, condition: $condition) {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectSeries(
+  $input: DeleteProjectSeriesInput!
+  $condition: ModelProjectSeriesConditionInput
+) {
+  deleteProjectSeries(input: $input, condition: $condition) {
+    id
+    title
+    projectID
+    project {
+      id
+      name
+      series {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    events {
+      items {
+        id
+        projectSeriesID
+        type
+        description
+        date
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProjectSeriesEvent(
+  $input: CreateProjectSeriesEventInput!
+  $condition: ModelProjectSeriesEventConditionInput
+) {
+  createProjectSeriesEvent(input: $input, condition: $condition) {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProjectSeriesEvent(
+  $input: UpdateProjectSeriesEventInput!
+  $condition: ModelProjectSeriesEventConditionInput
+) {
+  updateProjectSeriesEvent(input: $input, condition: $condition) {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProjectSeriesEvent(
+  $input: DeleteProjectSeriesEventInput!
+  $condition: ModelProjectSeriesEventConditionInput
+) {
+  deleteProjectSeriesEvent(input: $input, condition: $condition) {
+    id
+    projectSeriesID
+    projectSeries {
+      id
+      title
+      projectID
+      project {
+        id
+        name
+        createdAt
+        updatedAt
+      }
+      events {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    type
+    description
+    date
+    createdAt
+    updatedAt
+  }
+}

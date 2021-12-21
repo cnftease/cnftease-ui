@@ -1,0 +1,65 @@
+#header {
+  display: block
+}
+
+.grid {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+}
+
+.grid > section {
+  max-width: 1280px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+
+@media (min-height: 500px) {
+  #header {
+      position: sticky;
+      top: 0;
+      z-index: 9999;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .grid > section {
+      font-size: .8em;
+      max-width: 98%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 1440px){
+  .grid > section {
+      font-size: 1em;
+      max-width: 80%;
+  }
+}
+
+.left-nav {
+  grid-area: left-nav;
+}
+.main {
+  grid-area: main;
+  padding: 2em;
+}
+.toolbar {
+  grid-area: toolbar;
+}
+
+.content-grid {
+  display:grid;
+  gap: 1em;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "toolbar toolbar toolbar toolbar toolbar"
+    "left-nav main main main main"
+}
+
+.full-width {
+  width: 100%;
+}
