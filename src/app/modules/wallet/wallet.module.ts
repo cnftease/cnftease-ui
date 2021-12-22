@@ -43,6 +43,10 @@ import { WalletSelectionListComponent } from './components/wallet-selection-list
   ],
   exports: [
     WalletsDetailsViewComponent,
+    WalletSelectionListComponent,
+    WalletAddComponent,
+    WalletRemoveComponent,
+    WalletRemoveComponent,
   ]
 })
 export class WalletModule { }

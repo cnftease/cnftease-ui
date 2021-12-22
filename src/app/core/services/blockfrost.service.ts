@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 import { Asset } from 'src/app/modules/wallet/models/Asset';
 import { environment } from 'src/environments/environment';
 import { AssetAmount } from '../models/AssetAmount';
@@ -41,12 +42,12 @@ export class BlockfrostService {
   //     }
   //   });
 
-    // return {
-    //   ...address,
-    //   details,
-    //   assets,
-    // };
- // };
+  // return {
+  //   ...address,
+  //   details,
+  //   assets,
+  // };
+  // };
 
   getAllAssets(resultCount: number = 100, page: number = 1, order: SortOrder = SortOrder.ascending) {
     return this.http.get<{ asset: string, quantity: number }[]>(`${environment.blockFrostEndpoint}/assets?page=${page}&count=${resultCount}&order=${order}`, {
@@ -60,7 +61,7 @@ export class BlockfrostService {
     });
   }
 
-  getAssetInfo(assetId: string) {
+  async getAssetInfo(assetId: string) {
     let assetInfo;
 
     this.log.info("Checking for item in cache")
@@ -68,11 +69,10 @@ export class BlockfrostService {
     const cache = localStorage.getItem(assetId);
 
     if (!cache) {
-      this.getAsset(assetId).subscribe(info => {
-        assetInfo = info;
-        localStorage.setItem(assetId, JSON.stringify(assetInfo));
-      });
-    } else {
+      const assetInfo = await firstValueFrom(this.getAsset(assetId));
+      localStorage.setItem(assetId, JSON.stringify(assetInfo));
+    }
+    else {
       assetInfo = JSON.parse(cache);
     }
 

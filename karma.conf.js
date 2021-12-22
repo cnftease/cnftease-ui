@@ -22,7 +22,7 @@ module.exports = function (config) {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     junitReporter: {
-      outputDir: 'testresults/junit',
+      outputDir: 'test-results/junit',
       outputFile: 'unit-test-result.xml',
       useBrowserName: false
     },

@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { HeaderModule } from './modules/header/header.module';
 import { FooterModule } from './modules/footer/footer.module';
 
-import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
+import { AmplifyAuthenticatorModule } from '@aws-amplify/ui-angular';
 import Amplify from 'aws-amplify';
 // eslint-disable-next-line  @typescript-eslint/no-explicit-any
 import awsmobile from '../aws-exports';
@@ -27,7 +27,7 @@ Amplify.configure(awsmobile);
     SignInComponent,
   ],
   imports: [
-    AmplifyUIAngularModule,
+    AmplifyAuthenticatorModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

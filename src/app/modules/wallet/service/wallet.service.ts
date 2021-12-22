@@ -6,7 +6,7 @@ import { BlockfrostService } from '../../../core/services/blockfrost.service';
 import { LogService } from '../../../core/services/log.service';
 import { Asset } from '../models/Asset';
 import { Wallet } from '../models/Wallet';
-import { of } from 'rxjs';
+import { firstValueFrom, of } from 'rxjs';
 import { WalletStateService } from './wallet-state.service';
 import { addedWallet, loadedWallets, removedWallet } from '../store/actions/wallet.actions';
 import { select } from '@ngrx/store';
@@ -59,13 +59,13 @@ export class WalletService {
    * Loads wallet details based on a given address.
    */
   async getWalletAssets(stakeAddress: string): Promise<Asset[]> {
-    const amounts: AssetAmount[] = await this.blockfrost.getAddressAssetAmounts(stakeAddress).toPromise();
+    const amounts: AssetAmount[] = await firstValueFrom(this.blockfrost.getAddressAssetAmounts(stakeAddress));
     const assets: Asset[] = [];
 
     if (amounts?.length > 0) {
-      amounts.forEach((amount) => {
+      amounts.forEach(async (amount) => {
         try {
-          const asset: Asset = this.blockfrost.getAssetInfo(amount.unit);
+          const asset: Asset = await this.blockfrost.getAssetInfo(amount.unit);
           if (!asset) {
             throw `Problem loading asset '${amount.unit}'.`;
           }
@@ -86,6 +86,4 @@ export class WalletService {
     }
     return assets;
   }
-
-
 }
