@@ -7,7 +7,8 @@
     "build": "ng build",
     "build:prod": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": " ng test --no-watch --source-map=false"
+    "test": "ng test --no-watch --source-map=false",
+    "test:watch": "ng test --watch"
   },
   "private": true,
   "dependencies": {

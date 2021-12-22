@@ -21,7 +21,7 @@ export class BlockfrostService {
     project_id: environment.blockFrostApiKey
   }
   constructor(private http: HttpClient, private log: LogService) {
-    this.log.enabled = true;
+    this.log.enabled = false;
     this.log.banner('Logging BlockFrostService');
   }
 
