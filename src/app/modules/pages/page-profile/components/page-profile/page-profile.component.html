@@ -19,8 +19,8 @@
     <section class="profile">
         <mat-card *ngIf="filteredAssets.length > 0">
             <mat-card-content>
-                <app-cnft-grid-list [columns]="cols" [assets]="filteredAssets">
-                </app-cnft-grid-list>
+                <wallet-asset-thumbnail-grid-list [columns]="cols">
+                </wallet-asset-thumbnail-grid-list>
             </mat-card-content>
             <mat-card-footer></mat-card-footer>
         </mat-card>

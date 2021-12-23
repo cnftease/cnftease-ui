@@ -15,3 +15,8 @@ export const loadedWallets = createAction(
   '[Wallet] Loaded Wallets',
   (wallets: Wallet[])=>({wallets})
 );
+
+export const loadedAssets = createAction(
+  '[Wallet] Loaded Assets',
+  (wallets: Wallet[])=>({wallets})
+);

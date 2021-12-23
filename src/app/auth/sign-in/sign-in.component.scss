@@ -5,7 +5,16 @@
     height: 100%;
     margin-top: -96px;
 }
+.amplify-button {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background: none;
+  border: 2px solid black;
+}
 
+.amplify-button:hover {
+  background: gray;
+}
 .login {
     flex: 0 1 auto;
     width: 450px;

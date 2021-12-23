@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CnftGridListComponent } from './cnft-grid-list.component';
+import { WalletAssetThumbnailGridListComponent } from './wallet-asset-thumbnail-grid-list.component';
 
 describe('CnftGridListComponent', () => {
-  let component: CnftGridListComponent;
-  let fixture: ComponentFixture<CnftGridListComponent>;
+  let component: WalletAssetThumbnailGridListComponent;
+  let fixture: ComponentFixture<WalletAssetThumbnailGridListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CnftGridListComponent ]
+      declarations: [ WalletAssetThumbnailGridListComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CnftGridListComponent);
+    fixture = TestBed.createComponent(WalletAssetThumbnailGridListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

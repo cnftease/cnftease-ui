@@ -1,10 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Asset } from 'src/app/modules/wallet/models/Asset';
-import { CnftPost } from 'src/app/core/models/CnftPost';
-import { BlockfrostService } from 'src/app/core/services/blockfrost.service';
-import { LogService } from 'src/app/core/services/log.service';
-import { AssetDetailsDialogComponent } from '../../../pages/page-profile/components/asset-details-dialog/asset-details-dialog.component';
+import { WalletAssetDetailsDialog } from '../wallet-asset-details-dialog/wallet-asset-details-dialog.component';
 
 @Component({
   selector: 'wallet-asset-thumbnail',
@@ -42,7 +39,7 @@ export class WalletAssetThumbnailComponent implements OnInit {
   }
 
   openDetails(): void {
-    const dialogRef = this.dialog.open(AssetDetailsDialogComponent, {
+    const dialogRef = this.dialog.open(WalletAssetDetailsDialog, {
       data: this.asset,
     });
     dialogRef.afterClosed().subscribe(result => { });

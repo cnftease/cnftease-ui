@@ -61,24 +61,7 @@ export class BlockfrostService {
     });
   }
 
-  async getAssetInfo(assetId: string) {
-    let assetInfo;
 
-    this.log.info("Checking for item in cache")
-
-    const cache = localStorage.getItem(assetId);
-
-    if (!cache) {
-      const assetInfo = await firstValueFrom(this.getAsset(assetId));
-      localStorage.setItem(assetId, JSON.stringify(assetInfo));
-    }
-    else {
-      assetInfo = JSON.parse(cache);
-    }
-
-    this.assets.push(assetInfo);
-    return assetInfo;
-  }
 
   getAddressDetails(address: string) {
     return this.http.get<any>(`${environment.blockFrostEndpoint}/addresses/${address}`, {

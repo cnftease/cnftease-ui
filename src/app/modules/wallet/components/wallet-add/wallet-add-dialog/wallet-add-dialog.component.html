@@ -9,6 +9,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Address</mat-label>
       <input matInput formControlName="address">
+      <mat-error *ngIf="addressControl?.hasError('addressInvalid')">Address is invalid</mat-error>
     </mat-form-field>
   </form>
 </div>

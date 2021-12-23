@@ -12,8 +12,8 @@ import { WalletService } from '../../service/wallet.service';
  * @param text - Optional override to button text. Defaults to 'Remove'.
  */
 @Component({
-  selector: 'wallet-remove',
-  template: '<button mat-button (click)="onRemove()">{{text}}</button>',
+  selector: 'wallet-remove-button',
+  template: '<button mat-raised-button color="warn" (click)="onRemove()">{{text}}</button>',
   styles: [],
 })
 export class WalletRemoveComponent{

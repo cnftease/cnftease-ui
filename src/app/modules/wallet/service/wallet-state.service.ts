@@ -9,7 +9,8 @@ import { WalletService } from './wallet.service';
   providedIn: 'root'
 })
 export class WalletStateService {
-  constructor(
-    public store: Store<WalletState>) {
-    }
+  constructor(private store$: Store<WalletState>) {}
+  get store() {
+    return this.store$
+  }
 }

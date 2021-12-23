@@ -10,10 +10,10 @@ import { WalletStateService } from '../../service/wallet-state.service';
 import { WalletService } from '../../service/wallet.service';
 import { selectors } from '../../store';
 import { addedWallet } from '../../store/actions/wallet.actions';
-import { AddWalletDialog } from './add-wallet-dialog/add-wallet-dialog.component';
+import { WalletAddDialog } from './wallet-add-dialog/wallet-add-dialog.component';
 
 @Component({
-  selector: 'wallet-add',
+  selector: 'wallet-add-button',
   template: `<button mat-button (click)="onAddWallet()">{{text}}</button>`,
   styles: [],
 })
@@ -27,7 +27,7 @@ export class WalletAddComponent implements OnInit {
   ngOnInit(): void { }
 
   onAddWallet(): void {
-    const dialogRef = this.dialog.open(AddWalletDialog, {
+    const dialogRef = this.dialog.open(WalletAddDialog, {
       width: '250px'
     });
     dialogRef.afterClosed().subscribe(result => {

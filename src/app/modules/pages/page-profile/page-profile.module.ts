@@ -13,9 +13,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
-
-import { CnftGridListComponent } from './components/cnft-grid-list/cnft-grid-list.component';
-import { AssetDetailsDialogComponent } from './components/asset-details-dialog/asset-details-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { WalletModule } from '../../wallet/wallet.module';
 const routes: Routes = [
@@ -26,8 +23,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     PageProfileComponent,
-    CnftGridListComponent,
-    AssetDetailsDialogComponent,
+
   ],
   imports: [
     CommonModule,

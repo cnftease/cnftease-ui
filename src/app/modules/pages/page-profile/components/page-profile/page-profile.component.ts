@@ -28,16 +28,9 @@ export class PageProfileComponent implements OnInit {
   
   constructor(
     private observer: BreakpointObserver,
-    private blockFrost: BlockfrostService,
     private snackBar: MatSnackBar,
-    private log: LogService,
-    private currentRoute: ActivatedRoute,
   ) {
-    this.log.enabled = true;
-    this.log.banner('Logging PageProfileComponent');
-
     this.setupSearch();
-
     this.setupLayoutObservers();
   }
 
@@ -58,7 +51,6 @@ export class PageProfileComponent implements OnInit {
       this.filteredAssets = this.assets;
     }
   }
-
 
   setupLayoutObservers() {
     this.observer.observe([
@@ -96,8 +88,6 @@ export class PageProfileComponent implements OnInit {
       duration: 5 * 1000,
     });
   }
-
-
 
   activateLayout(cols: number) {
     this.cols = cols;

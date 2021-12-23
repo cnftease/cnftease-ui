@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { AddWalletDialog } from './components/wallet-add/add-wallet-dialog/add-wallet-dialog.component';
+import { WalletAddDialog } from './components/wallet-add/wallet-add-dialog/wallet-add-dialog.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,15 +17,20 @@ import { WalletAssetThumbnailComponent } from './components/wallet-asset-thumbna
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatListModule } from '@angular/material/list';
 import { WalletSelectionListComponent } from './components/wallet-selection-list/wallet-selection-list.component';
+import { WalletAssetThumbnailGridListComponent } from './components/wallet-asset-thumbnail-grid-list/wallet-asset-thumbnail-grid-list.component';
+import { WalletAssetDetailsDialog } from './components/wallet-asset-details-dialog/wallet-asset-details-dialog.component';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
-    WalletsDetailsViewComponent,
     WalletAddComponent,
-    WalletAssetThumbnailComponent,
-    AddWalletDialog,
     WalletRemoveComponent,
     WalletSelectionListComponent,
+    WalletsDetailsViewComponent,
+    WalletAssetThumbnailComponent,
+    WalletAssetThumbnailGridListComponent,
+    WalletAddDialog,
+    WalletAssetDetailsDialog,
   ],
   imports: [
     CommonModule,    
@@ -39,14 +44,18 @@ import { WalletSelectionListComponent } from './components/wallet-selection-list
     MatIconModule,
     MatProgressSpinnerModule,
     MatListModule,
+    MatGridListModule,
     StoreModule.forFeature(reducers.walletFeatureKey, reducers.reducer),
   ],
   exports: [
     WalletsDetailsViewComponent,
-    WalletSelectionListComponent,
     WalletAddComponent,
+    WalletAddDialog,
     WalletRemoveComponent,
-    WalletRemoveComponent,
+    WalletSelectionListComponent,
+    WalletAssetThumbnailComponent,
+    WalletAssetThumbnailGridListComponent,
+    WalletAssetDetailsDialog,
   ]
 })
 export class WalletModule { }

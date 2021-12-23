@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AssetDetailsDialogComponent } from './asset-details-dialog.component';
+import { WalletAssetDetailsDialog } from './wallet-asset-details-dialog.component';
 
-describe('AssetDetailsDialogComponent', () => {
-  let component: AssetDetailsDialogComponent;
-  let fixture: ComponentFixture<AssetDetailsDialogComponent>;
+describe('WalletAssetDetailsDialogComponent', () => {
+  let component: WalletAssetDetailsDialog;
+  let fixture: ComponentFixture<WalletAssetDetailsDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AssetDetailsDialogComponent ]
+      declarations: [ WalletAssetDetailsDialog ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AssetDetailsDialogComponent);
+    fixture = TestBed.createComponent(WalletAssetDetailsDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

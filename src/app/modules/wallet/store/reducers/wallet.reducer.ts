@@ -37,5 +37,12 @@ export const walletReducer = createReducer(
       wallets: wallets
     })
   ),
+  on(WalletActions.loadedAssets,
+    (state: WalletState, {wallets}) =>
+    ({
+      ...state,
+      wallets: wallets
+    })
+  ),
 );
 

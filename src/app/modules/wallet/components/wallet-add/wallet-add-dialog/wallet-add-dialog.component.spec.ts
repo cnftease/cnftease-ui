@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddWalletDialog } from './add-wallet-dialog.component';
+import { WalletAddDialog } from './wallet-add-dialog.component';
 
-describe('AddWalletDialog', () => {
-  let component: AddWalletDialog;
-  let fixture: ComponentFixture<AddWalletDialog>;
+describe('WalletAddDialog', () => {
+  let component: WalletAddDialog;
+  let fixture: ComponentFixture<WalletAddDialog>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddWalletDialog ],
+      declarations: [ WalletAddDialog ],
       providers: [
         
       ]
@@ -16,7 +16,7 @@ describe('AddWalletDialog', () => {
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddWalletDialog);
+    fixture = TestBed.createComponent(WalletAddDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,15 +4,15 @@ import { Asset } from 'src/app/modules/wallet/models/Asset';
 import { LogService } from 'src/app/core/services/log.service';
 
 @Component({
-  selector: 'app-asset-details-dialog',
-  templateUrl: './asset-details-dialog.component.html',
-  styleUrls: ['./asset-details-dialog.component.scss']
+  selector: 'wallet-asset-details-dialog',
+  templateUrl: './wallet-asset-details-dialog.component.html',
+  styles: []
 })
-export class AssetDetailsDialogComponent implements OnInit {
+export class WalletAssetDetailsDialog implements OnInit {
 
   constructor(
     private log: LogService,
-    public dialogRef: MatDialogRef<AssetDetailsDialogComponent>,
+    public dialogRef: MatDialogRef<WalletAssetDetailsDialog>,
     @Inject(MAT_DIALOG_DATA) public data: Asset,
   ) { }
 
